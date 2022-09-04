@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/BlogPost.astro"
+layout: "../../layouts/Article.astro"
 title: "Bài toán tối ưu"
 description: "Có một bài toán trong sách giáo khoa lớp 8 nói vể sự tối ưu mà tới giờ mình vẫn nhớ…"
 pubDate: "June 21, 2022 10:40 PM"

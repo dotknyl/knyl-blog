@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/BlogPost.astro"
+layout: "../layouts/Article.astro"
 title: "Hello, world!"
 description: "Lorem ipsum dolor sit amet"
 heroImage: "/dotknyl.jpg"

@@ -1,0 +1,24 @@
+---
+    import Blog from '../../components/Blog.astro';
+
+    // Use Astro.glob() to fetch all posts, and then sort them by date.
+    export async function getStaticPaths() {
+        let tags = new Set<string>();
+        const allPosts = (await Astro.glob('../blog/*.{md,mdx}')).sort(
+            (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+        );
+        allPosts.forEach(post => post.frontmatter.tags.forEach((x: string) => tags.add(x)));
+        let arr = Array.from(tags);
+        return arr.map((x) => {
+            return {
+                params: { tag: x },
+            };
+        });
+    }
+    const { tag } = Astro.params;
+    const posts = (await Astro.glob('../blog/*.{md,mdx}')).filter(x => x.frontmatter.tags.includes(tag)).sort(
+        (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+
+---
+
+<Blog posts={posts} />

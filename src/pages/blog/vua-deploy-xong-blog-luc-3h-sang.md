@@ -1,9 +1,9 @@
 ---
-layout: "../../layouts/BlogPost.astro"
+layout: "../../layouts/Article.astro"
 title: "Vừa deploy xong blog lúc 3h sáng"
 description: "Dạo này làm microservices bug đấm sấp mặt, mà cũng gặp được nhiều thứ hay ho, vậy nên mình dành ra 2 ngày cuối tuần code cái blog để giải trí sau những giờ code căng thẳng…"
 pubDate: "May 30, 2022 2:49 AM"
-tags: ["discuss", "career"]
+tags: ["discuss", "sharing"]
 ---
 
 Dạo này làm microservices bug đấm sấp mặt, mà cũng gặp được nhiều thứ hay ho, vậy nên mình dành ra 2 ngày cuối tuần code cái blog để giải trí sau những giờ code căng thẳng =))
