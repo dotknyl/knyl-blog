@@ -1,0 +1,38 @@
+---
+	import HeaderLink from './HeaderLink.astro';
+	import { SITE_TITLE } from '../config';
+---
+
+<header>
+	<h2>
+		{SITE_TITLE}
+	</h2>
+	<nav>
+		<HeaderLink href="/">Home</HeaderLink>
+		<HeaderLink href="/about">About</HeaderLink>
+	</nav>
+</header>
+<style lang="scss">
+	header {
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100vw;
+		background: #fff;
+		box-shadow: 2px 2px 8px rgb(0 0 0 / 10%);
+		border-radius: 4px;
+		text-align: center;
+		line-height: 1.5;
+		color: #444;
+		padding: 10px;
+
+		h2 {
+			margin: 0.5em 0;
+		}
+		@media (max-width: 70ch) {
+			h2 {
+				font-size: 1.25rem !important;
+			}
+		}
+	}
+</style>
