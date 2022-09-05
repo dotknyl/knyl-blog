@@ -29,6 +29,7 @@
                     display: flex;
                     width: 192px;
                     height: 144px;
+                    min-width: 192px;
                     margin-right: 1rem;
                 }
 
@@ -40,12 +41,13 @@
                     width: auto;
                     height: auto;
                     max-width: 192px;
+                    max-height: 144px;
                     margin: auto;
                 }
 
                 time {
                     font-style: italic;
-                    color: #888;
+                    color: #333;
                     font-size: smaller;
                     margin: auto 0;
                 }
@@ -93,8 +95,9 @@
                 <div class="article">
                     <div class="thumbnail">
                         {post.frontmatter.heroImage ?
-                        <img src={post.frontmatter.heroImage} alt="{post.frontmatter.tittle}" />
-                        : <img src="/no-image.svg" alt="{post.frontmatter.tittle}" />
+                        <img width={720} height={360} src={post.frontmatter.heroImage}
+                            alt="{post.frontmatter.tittle}" />
+                        : <img width={720} height={360} src="/no-image.svg" alt="{post.frontmatter.tittle}" />
                         }
                     </div>
                     <div>
@@ -110,8 +113,8 @@
                         </div>
                         <p class="text-sm">{post.frontmatter.description}</p>
                         <div class="tags">
-                            {post.frontmatter.tags?.map((tag) => (
-                            <a href={"/tags/"+tag}>#{tag}</a>
+                            {post.frontmatter.tags && post.frontmatter.tags?.map((tag) => (
+                            <a href={"/"+tag}>#{tag}</a>
                             ))}
                         </div>
                     </div>

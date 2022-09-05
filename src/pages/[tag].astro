@@ -1,0 +1,21 @@
+---
+    import Blog from '../components/Blog.astro';
+
+    export async function getStaticPaths() {
+        let tags = new Set<string>();
+        const allPosts = await Astro.glob('./blog/*.{md,mdx}');
+        allPosts?.forEach(post => post.frontmatter.tags?.forEach((x: string) => tags.add(x)));
+        let allTags = Array.from(tags);
+        return allTags.map((tag) => {
+            const filteredPosts = allPosts.filter(post => post.frontmatter.tags?.includes(tag)).sort(
+                (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+            return {
+                params: { tag },
+                props: { posts: filteredPosts }
+            };
+        });
+    }
+    const { posts } = Astro.props;
+---
+
+<Blog posts={posts} />
