@@ -1,0 +1,60 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+export interface Props {
+  content: {
+    title: string;
+    description: string;
+    pubDate?: string;
+    updatedDate?: string;
+    heroImage?: string;
+  };
+}
+
+const {
+  content: { title, description, pubDate, updatedDate, heroImage },
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description} image={heroImage}>
+  <main class="md:flex md:justify-center">
+    <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
+      {heroImage && <img src={heroImage} alt={title} class="w-full mb-6" />}
+      <h1 class="title my-2 text-4xl font-bold">{title}</h1>
+      {pubDate && <time>{pubDate}</time>}
+      {
+        updatedDate && (
+          <div>
+            {" "}
+            Last updated on <time>{updatedDate}</time>{" "}
+          </div>
+        )
+      }
+      <div class="divider my-2"></div>
+      <slot />
+      <hr />
+      <div>
+        <!-- prettier-ignore-start -->
+        <script
+          src="https://giscus.app/client.js"
+          data-repo="dotknyl/dotknyl.github.io"
+          data-repo-id="R_kgDOH73L9A"
+          data-category="General"
+          data-category-id="DIC_kwDOH73L9M4CTDcS"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="light_high_contrast"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async
+        ></script>
+        <!-- prettier-ignore-end -->
+      </div>
+    </article>
+  </main>
+</BaseLayout>
