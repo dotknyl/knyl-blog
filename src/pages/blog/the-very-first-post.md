@@ -7,7 +7,7 @@ pubDate: "Sep 10 2022"
 
 Hi there,
 
-It was 3 month since I last deployed my blog, but I have no content for new articles.
+It was 3 months since I last deployed my blog, but I have no content for new articles.
 
 Today I come back with something news:
 - New theme, I got it from Astro themes.

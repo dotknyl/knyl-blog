@@ -19,7 +19,7 @@ const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
       {
         !img && (
           <img
-            src='no-image.svg'
+            src='/no-image.svg'
             alt={title}
             class="max-w-full md:max-w-[13rem] rounded-lg"
           />
