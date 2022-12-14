@@ -7,24 +7,27 @@ const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
 >
   <a href={url} target={target}>
     <div class="hero-content flex-col md:flex-row">
-      {
-        img && (
-          <img
-            src={img}
-            alt={title}
-            class="max-w-full md:max-w-[13rem] md:min-w-[13rem] rounded-lg"
-          />
-        )
-      }
-      {
-        !img && (
-          <img
-            src='/no-image.svg'
-            alt={title}
-            class="max-w-full md:max-w-[13rem] rounded-lg"
-          />
-        )
-      }
+      <div class="md:flex md:justify-center max-w-full md:h-28 md:w-52 h-20">
+        {
+          img && (
+            <img
+              src={img}
+              alt={title}
+              class="rounded-lg h-full"
+            />
+          )
+        }
+        <!-- {img && <img src={img} alt={title} class="max-w-full rounded-lg" />} -->
+        {
+          !img && (
+            <img
+              src="/no-image.svg"
+              alt={title}
+              class="h-full rounded-lg"
+            />
+          )
+        }
+      </div>
       <div class="grow w-full">
         <h1 class="text-xl font-bold">
           {title}
