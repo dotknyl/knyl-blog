@@ -1,18 +1,58 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
+
+let arr = [
+  {
+    title: `Senior Developer at ERM System INC`,
+    subtitle: `From Nov 2020 at Ho Chi Minh City, Vietnam`,
+    desc: `
+- Join to build and deploy a microservices system to manage our multi-tenant app. <span class="italic">[Docker, Kubernetes, ..]</span><br>
+- Built a gateway with hot-reloading to support our multi-tenant system (api, web applications). <br>
+- Developed dynamic form: A customizable design that can be managed from the backend, displayed on public websites, collect submissions and send submission data to the owner. <br>
+- Implemented workflow: Handle application events. <span class="italic">[Redis stream, background worker]</span><br>
+- Developed system features: Lead and property management, property map searching...<br>
+- Experienced with: Azure Portal, Azure DevOps, Git...<br>
+<span class='text-gray-600 font-medium'>Skills: .NET Core · Relational Databases · Redis · Microservices · Distributed Systems · Angular</span>
+  `,
+  },
+  {
+    title: `Freelance Developer`,
+    subtitle: `From Mar 2018 to Dec 2021`,
+    desc: `
+  Developed softwares for small businesses: Tracking management, crawling and importing products.<br>
+  <span class='text-gray-600 font-medium'>Skills: Selenium · .NET Framework</span>
+  `,
+  },
+  {
+    title: `Information Technology Help Desk at The People's Court of Quang Tri`,
+    subtitle: `From Mar 2020 to Sep 2020 at Quang Tri, Vietnam`,
+    desc: `I tried to work here because I want to be close by taking care of my mom, but I stopped. I desire to improve my programming skills and learn new technologies. In here, I operate and maintenance both mechanical systems (like computers, printers, photocopy machine...) and softwares (streaming systems).<br>
+It is not improve my programming skills but it brings me more experiences about the life, the people and the family.<br>`,
+  },
+  {
+    title: `Junior Developer at Incredium `,
+    subtitle: `From Dec 2018 to Mar 2020 at Hue, Vietnam`,
+    desc: `- I developed Fire Click - User Behavior Analytics., which analyzes the behavior of users on a website, find out what customers are most interested in and visit the most and display by tables, graphs, charts, heatmaps, self-making a simple video player for playing customer's behavior.<br>
+- Developed some Shopify Apps.<br>
+<span class='text-gray-600 font-medium'>Skills: .NET MVC, Javascript, VueJs, Algorithm and Data Structures</span>`,
+  },
+  {
+    title: `Intern Developer at HoaTamUs`,
+    subtitle: `From Sep 2018 to Nov 2018 at Hue, Vietnam`,
+    desc: `Implemented a self-drawing map for real estate systrem: Drawn the map from data (polygon, point, ...), created functions to control the map (zoom, scroll, display the land which the cursor put on..).<br>
+    <span class='text-gray-600 font-medium'>Skills: Algorithms · JavaScript · Data Structures</span>`,
+  }
+];
 ---
 
-<BaseLayout title = "Resume">
+<BaseLayout title="Resume">
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Profile</div>
   </div>
 
   <div class="mb-10 text-justify">
-    Engineer in Informatics Science with 6 years + of experience in software development. Dominion of various programming
-    languages, frameworks, CMS and graphics engines. Experience in WEB design and development. Work with Data Base handled
-    systems, as well as design, normalization and migration. Knowledge of work with graphic design tools for image
-    manipulation , User Interfaces design, Web sites, logos and other ones.
+    Senior Developer with 4 years + of experience in software development. Work with .NET Core and related technologies. Experience in develop multi-tenant application.
   </div>
 
   <div class="mb-5">
@@ -21,8 +61,9 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-      title="Information Technology"
-      subtitle="2015 to 2019 at Hue University Of Sciences"
+      title="Bachelor's degree, Information Technology"
+      subtitle="2015 to 2019 at Hue University Of Science, Hue, Vietnam"
+      desc="Third Prize - The 2016 ACM ICPC Vietnam Central Provincial Contest."
     />
     <!-- <TimeLineElement
       title="Informatics Science Engineer"
@@ -35,81 +76,53 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="time-line-container mb-10">
-    <TimeLineElement
-      title="UI Designer and Developer at Integral Access Control System (Thesis)"
-      subtitle="From 2015 at XETID, Habana, Cuba"
-      desc="System multiplatform that includes the steps of a company's personnel, the structure and composition thereof, as well as a powerful designer of credentials and module of control of access. Outspread at the MINFAR and another entities of the country. Technologies: C++, Qt Framework, Subversión, Visual Paradigm, PostgreSQL, Jmeter"
-    />
-    <TimeLineElement
-      title="Web Developer at Integral Oil Drilling System 2.0"
-      subtitle="From 2015 to 2016 at CEDIN, UCI, Habana, Cuba"
-      desc="System of steps of process of perforation of oil wells. Outspread in the direction of Intervención of Wells and various wells of drilling of the Occident of the country. Generate reports and graphs of process of perforation making use of data mining. Technologies: Php,Symfony 2.7 , Subversión, PostgreSQL, HigthChart, Ireport, Boostrap 2, JQuery, HTML,CSS, JavaScript"
-    />
-    <TimeLineElement
-      title="Full Stack Dev, Software Architect and Project Leader at Integral Oil Drilling System 3.0"
-      subtitle="From 2016 to 2017 at CEDIN, UCI, Habana, Cuba"
-      desc="System of steps of process of perforation of oil wells. Outspread in the direction of Intervención of Wells and various wells of drilling of the Occident of the country. Generate reports and graphs of process of perforation making use of data mining. Technologies: Php,Symfony 2.8 , Gitlab, PostgreSQL, HigthChart, Boostrap 2, JQuery, HTML,CSS, JavaScript"
-    />
-    <TimeLineElement
-      title="Full Stack Dev, UI/UX Designer and Software Architect at Primary Information System"
-      subtitle="From 2017 to 2018 at CEDIN, UCI, Habana, Cuba"
-      desc="System of steps of primary information at a company. personnel's steps, control of access, impression of credentials, steps of locales, structure and composition. Technologies: Php,Symfony 3.3 , Gitlab, PostgreSQL, , Boostrap 3, JQuery, HTML,CSS, JavaScript"
-    />
+    {
+      arr.map((item) => (
+        <TimeLineElement
+          title={item.title}
+          subtitle={item.subtitle}
+          desc={item.desc}
+        />
+      ))
+    }
   </div>
 
-  <div class="mb-5">
+  <!-- <div class="mb-5">
     <div class="text-3xl w-full font-bold">Certifications</div>
   </div>
 
   <ul class="list-disc mx-6 mb-10 grid gap-2">
     <li>
-      <a href="https://www.efset.org/cert/DxtNKG" target="_blank"> EF SET English Certificate 74/100 (C2 Proficient)</a>
+      <a href="https://www.efset.org/cert/DxtNKG" target="_blank">
+        EF SET English Certificate 74/100 (C2 Proficient)</a
+      >
     </li>
     <li>
-      <a href="https://certiprof.com/pages/scrum-foundation-professional-certificate-sfpc-en-sp" target="_blank"> Scrum Foundation Professional Certificate (SFPC)</a>
+      <a
+        href="https://certiprof.com/pages/scrum-foundation-professional-certificate-sfpc-en-sp"
+        target="_blank"
+      >
+        Scrum Foundation Professional Certificate (SFPC)</a
+      >
     </li>
-  </ul>
+  </ul> -->
 
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Skills</div>
   </div>
 
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>Spanish (Native)</li>
-    <li>English (C2)</li>
-    <li>JavaScript</li>
-    <li>C++</li>
-    <li>PHP</li>
-    <li>Ruby</li>
+  <ul class="list-disc md:columns-4 columns-2 mx-6">
+    <li>Distributed Systems</li>
+    <li>Microservices</li>
+    <li>Streaming Events</li>
+    <li>Docker</li>
+    <li>Kubernetes</li>
+    <li>.NET Core</li>
     <li>MS SQL</li>
     <li>Postgres SQL</li>
-    <li>CSS</li>
-    <li>SASS</li>
-    <li>HTML</li>
-    <li>Node.js</li>
-    <li>Ruby on Rails</li>
-    <li>AngularJS</li>
-    <li>VUE</li>
-    <li>Astro</li>
-    <li>Symfony 3</li>
-    <li>Yii2</li>
-    <li>Bootstrap</li>
-    <li>Taildwind</li>
-    <li>JQuery</li>
-    <li>Wordpress</li>
+    <li>Angular</li>
     <li>Git</li>
-    <li>Jira</li>
-    <li>Trello</li>
-    <li>BaseCamp</li>
-    <li>Scrum</li>
-    <li>Shape Up</li>
-    <li>LeanStartup</li>
-    <li>UI Design</li>
-    <li>WEB Design</li>
-    <li>Logo Design</li>
-    <li>Image Manipulation</li>
-    <li>Office Suite</li>
-    <li>Adobe Photoshop</li>
-    <li>KdenLive</li>
+    <li>Azure DevOps</li>
+    <li>Azure Portal</li>
   </ul>
 </BaseLayout>
