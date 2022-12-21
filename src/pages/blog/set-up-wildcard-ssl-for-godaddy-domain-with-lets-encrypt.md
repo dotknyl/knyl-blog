@@ -2,7 +2,7 @@
 layout: "../../layouts/PostLayout.astro"
 title: "Set up Wildcard SSL for Godaddy domain with Let's Encrypt"
 description: "Using Certbot to set up SSL for Godaddy domain"
-heroImage: "/blog/Certbot.png"
+heroImage: "/blog/certbot.png"
 pubDate: "Dec 22 2022"
 ---
 
