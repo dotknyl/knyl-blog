@@ -2,7 +2,7 @@
 layout: "../../layouts/PostLayout.astro"
 title: "The Very First Post"
 description: "A new beginning for knyL's blog."
-pubDate: "Sep 10 2022"
+pubDate: "Dec 13 2022"
 ---
 
 Hi there,

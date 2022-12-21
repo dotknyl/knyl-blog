@@ -2,7 +2,7 @@
 layout: "../../layouts/PostLayout.astro"
 title: "Set up Wildcard SSL for Godaddy domain with Let's Encrypt"
 description: "Using Certbot to set up SSL for godaddy domain"
-pubDate: "Sep 10 2022"
+pubDate: "Dec 22 2022"
 ---
 
 Let's Encrypt is a free, automated, and open certificate authority brought to you by the nonprofit Internet Security Research Group (ISRG). That's why I use this Certificate Authority for my website and other wildcard domains (\*.knyl.me).
@@ -43,24 +43,23 @@ To get a Let’s Encrypt certificate, you’ll need an ACME client software, and
        pip install certbot-dns-godaddy
    ```
 
-4. GoDaddy Cridentials
+4. **GoDaddy Cridentials**
 
-Use of this plugin requires a configuration file containing godaddy API credentials, obtained from your [developer.godaddy.com](https://developer.godaddy.com)
+    Use of this plugin requires a configuration file containing godaddy API credentials, obtained from your [developer.godaddy.com](https://developer.godaddy.com)
 
-4. Validate domain
+    Create credentials file on your server:
 
-   - To validate your domain, Certbot will add an TXT record to DNS
-   - Create credentials file on your server:
+**credentials.ini**
 
-   **credentials.ini**
+```
+    dns_godaddy_secret      = 0123456789abcdef0123456789abcdef01234567
+    dns_godaddy_key = abcdef0123456789abcdef01234567abcdef0123
 
-   ```
-       dns_godaddy_secret      = 0123456789abcdef0123456789abcdef01234567
-       dns_godaddy_key = abcdef0123456789abcdef01234567abcdef0123
+```
 
-   ```
+5. **Validate domain**
 
-   - Run certbot command:
+   Please use this command:
 
    ```bash
        sudo certbot certonly
@@ -72,12 +71,9 @@ Use of this plugin requires a configuration file containing godaddy API credenti
        -d 'example.com'
        -d '*.example.com' # remove if you don't need validate wildcard domain
    ```
+    When the progress was finished, your certificates would be stored at **/etc/letsencrypt/live/example.com**
 
-5. Finish
-
-When the progress was finished, your certificates would be stored at **/etc/letsencrypt/live/example.com**
-
-6. Renew
+6. **Renew**
 
 - Test automatic renewal:
 
