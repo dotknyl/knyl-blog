@@ -13,7 +13,7 @@ I have been conducting extensive research on TimescaleDB, a powerful relational 
 
 We have an existing Postgres container with resources that we cannot override, such as our databases, and installed extensions. Since we cannot use `sudo` on the docker terminal and some packages required for TimescaleDB installation are missing, I customized the installation process. Here are the steps I took:
 
-1. **Install missing packages for docker container**
+**1. Install missing packages for docker container**
 
 ```bash
 apt-get update
@@ -24,7 +24,7 @@ You may receive a notification, in which case you can choose to install the pack
 
 ![Untitled](/blog/install-timescaledb-on-an-existing-postgresql-container/Untitled.png)
 
-1. I**nstall TimescaleDB**
+**2. Install TimescaleDB**
 - Add the TimescaleDB third party repository:
 
 ```bash
@@ -49,7 +49,7 @@ apt-get update
 
 ![Untitled](/blog/install-timescaledb-on-an-existing-postgresql-container/Untitled%201.png)
 
-1. **Update config settings for TimescaleDB**
+**3. Update config settings for TimescaleDB**
 
 In this step, you need to add TimescaleDB to `shared_preload_libraries`. To avoid overriding current `shared_preload_libraries` settings, follow these steps to edit them:
 
@@ -73,8 +73,9 @@ show shared_preload_libraries;
 ALTER SYSTEM SET shared_preload_libraries ='timescaledb','pg_stat_monitor';
 ```
 
-1. ***Now, you need to restart your Docker container to load TimescaleDB.***
-2. **Add TimescaleDB extension**
+**4. *Now, you need to restart your Docker container to load TimescaleDB.***
+
+**5. Add TimescaleDB extension**
 - Log in to psql again:
 
 ```bash
