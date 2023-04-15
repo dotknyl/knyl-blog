@@ -28,7 +28,7 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           user: ${{ secrets.REMOTE_USER }}
           pass: ${{ secrets.REMOTE_PASSWORD }}
-          local: /home/runner/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}/dist
+          local: /home/runner/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}/dist/*
           remote: /home/web/static-site/${{ secrets.DOMAIN }}
 
 #   deploy:
