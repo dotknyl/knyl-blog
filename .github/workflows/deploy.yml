@@ -22,14 +22,22 @@ jobs:
         uses: actions/checkout@v2          
       - name: Install, build, and upload your site
         uses: withastro/action@v0
+      - name: scp-pipeline
+        uses: cross-the-world/scp-pipeline@v1.2.1
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          user: ${{ secrets.REMOTE_USER }}
+          pass: ${{ secrets.REMOTE_PASSWORD }}
+          local: /home/runner/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}/dist
+          remote: /home/web/static-site/${{ secrets.DOMAIN }}
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+#   deploy:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: github-pages
+#       url: ${{ steps.deployment.outputs.page_url }}
+#     steps:
+#       - name: Deploy to GitHub Pages
+#         id: deployment
+#         uses: actions/deploy-pages@v1
