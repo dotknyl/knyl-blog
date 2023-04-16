@@ -14,8 +14,8 @@ const last_posts = posts.slice(0, 3);
 <BaseLayout>
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hello, world!</div>
-    <div class="text-5xl font-bold">I'm Linh Le</div>
-    <div class="text-3xl py-3 font-bold">Software Developer</div>
+    <h1 class="text-5xl font-bold">I'm Linh Le (knyL)</h1>
+    <div class="text-3xl py-3 font-bold">Software Engineer</div>
     <div class="py-2">
       <text class="text-md">
         <p>
@@ -40,8 +40,13 @@ const last_posts = posts.slice(0, 3);
       >
     </div> -->
 
-    <div>
+    <div class="flex">
       <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+      <div
+        class="flex-end text-3xl w-full font-bold mb-5 mt-10 text-right text-indigo-500"
+      >
+        <a href="/blog/1">👉 See more</a>
+      </div>
     </div>
 
     {
@@ -60,8 +65,13 @@ const last_posts = posts.slice(0, 3);
     }
   </div>
 
-  <div>
+  <div class="flex">
     <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div
+      class="flex-end text-3xl w-full font-bold mb-5 mt-10 text-right text-indigo-500"
+    >
+      <a href="/projects">👉 See more</a>
+    </div>
   </div>
 
   <HorizontalCard
