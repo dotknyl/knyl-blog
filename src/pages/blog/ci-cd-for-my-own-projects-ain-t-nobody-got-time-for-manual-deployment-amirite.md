@@ -1,15 +1,15 @@
 ---
 layout: "../../layouts/PostLayout.astro"
-title: "CI/CD for my small projects by using GitHub Actions"
+title: "CI/CD for My Own Projects: Ain't nobody got time for manual deployment, amirite?"
 description: "I'm often hesitant to deploy my own projects due to the time-consuming and error-prone process. By migrating to GitHub Actions CI/CD, I can save time, reduce errors, and focus on project development..."
-heroImage: "/blog/ci-cd-for-my-small-projects-by-using-github-actions/github-actions.png"
+heroImage: "/blog/ci-cd-for-my-own-projects-ain-t-nobody-got-time-for-manual-deployment-amirite/github-actions.png"
 pubDate: "Apr 21 2023"
 ---
 ## Introducing
 
 As a developer, I'm often hesitant to deploy small projects due to the time-consuming and error-prone process. By migrating to GitHub Actions CI/CD, I can save time, reduce errors, and focus on project development. Automation of build, test, and deployment streamlines my workflow and ensures quick and efficient deployment, giving me peace of mind.
 
-![Legacy](/blog/ci-cd-for-my-small-projects-by-using-github-actions/legacy.png)
+![Legacy](/blog/ci-cd-for-my-own-projects-ain-t-nobody-got-time-for-manual-deployment-amirite/legacy.png)
 ## GitHub Actions
 > 💡
 > This CI/CD process is simple and easy to implement. 
@@ -74,7 +74,7 @@ jobs:
 
 ### Now it's easier.
 
-![GitHub Actions](/blog/ci-cd-for-my-small-projects-by-using-github-actions/github-actions.png)
+![GitHub Actions](/blog/ci-cd-for-my-own-projects-ain-t-nobody-got-time-for-manual-deployment-amirite/github-actions.png)
 
 ## In Summary
 
