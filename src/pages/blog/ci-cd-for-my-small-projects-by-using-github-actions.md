@@ -1,13 +1,13 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 title: "CI/CD for My Own Projects: Ain't nobody got time for manual deployment, amirite?"
-description: "I'm often hesitant to deploy my own projects due to the time-consuming and error-prone process. By migrating to GitHub Actions CI/CD, I can save time, reduce errors, and focus on project development..."
+description: "As a dev, I usually don't like to deploy my own projects 'cause the whole process takes a lot of time and there's always the risk of messing things up. But ever since I switched to GitHub Actions CI/CD, I've been able to save time, cut down on errors, and concentrate on the real deal - developing my projects. "
 heroImage: "/blog/ci-cd-for-my-own-projects-ain-t-nobody-got-time-for-manual-deployment-amirite/github-actions.png"
 pubDate: "Apr 21 2023"
 ---
 ## Introducing
 
-As a developer, I'm often hesitant to deploy small projects due to the time-consuming and error-prone process. By migrating to GitHub Actions CI/CD, I can save time, reduce errors, and focus on project development. Automation of build, test, and deployment streamlines my workflow and ensures quick and efficient deployment, giving me peace of mind.
+As a dev, I usually don't like to deploy my own projects 'cause the whole process takes a lot of time and there's always the risk of messing things up. But ever since I switched to GitHub Actions CI/CD, I've been able to save time, cut down on errors, and concentrate on the real deal - developing my projects. Automating the build, test, and deployment of my projects makes everything easier and faster, so I can get my work out there as soon as possible and worry less about the deployment process.
 
 ![Legacy](/blog/ci-cd-for-my-own-projects-ain-t-nobody-got-time-for-manual-deployment-amirite/legacy.png)
 ## GitHub Actions
@@ -78,4 +78,4 @@ jobs:
 
 ## In Summary
 
-As a developer, I confidently assert that GitHub Actions CI/CD is a game-changer for my projects. It has not only saved me valuable time but also reduced errors, giving me a peace of mind when deploying. The automated build, test, and deployment processes have streamlined my workflow and made it highly efficient, allowing me to focus solely on the fun parts of development such as creating new features or writing new blog content.
+So, like, if you're a developer, CI/CD is totally the way to go. It makes everything easier to work on with others, plus it saves time and reduces errors. With the right stuff set up, you'll always be up to date and running smoothly. And, if you're into learning new stuff, CI/CD can help you grow and improve your skills.
