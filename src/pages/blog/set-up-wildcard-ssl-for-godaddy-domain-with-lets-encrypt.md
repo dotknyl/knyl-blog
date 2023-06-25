@@ -6,51 +6,60 @@ heroImage: "/blog/certbot.png"
 pubDate: "Dec 22 2022"
 ---
 
-**If you have any quesstion, I feel free to suport you, you can comment at the end of page!**
+Let’s Encrypt is a free, automated, and open certificate authority brought to you by the nonprofit Internet Security Research Group (ISRG). That's why I use this Certificate Authority for my website and other wildcard domains (*.knyl.me).
 
-Let's Encrypt is a free, automated, and open certificate authority brought to you by the nonprofit Internet Security Research Group (ISRG). That's why I use this Certificate Authority for my website and other wildcard domains (\*.knyl.me).
+To get a Let’s Encrypt certificate, you’ll need an ACME client software, and most people use **[Certbot](https://certbot.eff.org/)**.
 
-To get a Let’s Encrypt certificate, you’ll need an ACME client software, and most people use [Certbot](https://certbot.eff.org/).
-
-## Installation
+## **Installation**
 
 1. **Update DNS Settings**
-
-   &ensp;DNS domain to your server.
-
-   ```
-   ----------------------------------------
-   |  Type  |  Name  |        Data        |
-   ----------------------------------------
-   |    A   |    @   |  <your server IP>  |
-   |    A   |    *   |  <your server IP>  |
-   ----------------------------------------
-   ```
-
-   The second record is used for wildcard domain, if you just want to get certificate for you original domain, you should add 2 type A records: `@` and `www`.
-
-2. **Install Certbot**
-
-   Enter [Certbot's website](https://certbot.eff.org/), choose the software and system.
-
-   ![Choose Certbot Environtment](/blog/certbot-1.jpg)
-
-   Follow the instructions to install Certbot.
-
+    
+    Add two type A records (`@` and `*`) to your DNS domain pointing to your server's IP address.
+    
+    ```
+    ----------------------------------------
+    |  Type  |  Name  |        Data        |
+    ----------------------------------------
+    |    A   |    @   |  <your server IP>  |
+    |    A   |    *   |  <your server IP>  |
+    ----------------------------------------
+    
+    ```
+    
+    ![DNS Settings](blog/Untitled.png)
+    
+    The second record is used for wildcard domains. If you only want to get a certificate for your original domain, add two type A records: **`@`** and **`www`**.
+    
+2. **Install Certbot on server**
+    
+    Go to **[Certbot’s website](https://certbot.eff.org/)**, choose the software and system.
+    
+    ![https://www.knyl.me/blog/certbot-1.jpg](https://www.knyl.me/blog/certbot-1.jpg)
+    
+    Follow the instructions to install Certbot.
+    
 3. **Install Certbot GoDaddy DNS**
-
-   Certbot does not have an ofical DNS plugin for GoDaddy, to continue you need to install a third party plugin here:
-   [https://github.com/miigotu/certbot-dns-godaddy](https://github.com/miigotu/certbot-dns-godaddy)
-
-   ```bash
-       pip install certbot-dns-godaddy
-   ```
-
-4. **GoDaddy Cridentials**
-
-    Use of this plugin requires a configuration file containing godaddy API credentials, obtained from your [developer.godaddy.com](https://developer.godaddy.com)
-
-    Create credentials file on your server:
+    
+    Because Certbot does not have an official DNS plugin for GoDaddy, you have to install a third-party plugin from **[https://github.com/miigotu/certbot-dns-godaddy**](https://github.com/miigotu/certbot-dns-godaddy**).
+    
+    ```
+    pip install certbot-dns-godaddy
+    
+    ```
+    
+4. **Create GoDaddy Credentials**
+    
+    Certbot GoDaddy Plugin requires a configuration file containing GoDaddy API credentials obtained from your **[developer.godaddy.com](https://developer.godaddy.com/)** account.
+    
+    - Go to API keys, create a key:
+    
+    ![GoDaddy API Key](blog/Untitled%201.png)
+    
+    - Save the key and secret to your backup notes.
+    
+    ![GoDaddy API Key](blog/Untitled%202.png)
+    
+    - Create a credential file on your server using the key and secret above:
 
 **credentials.ini**
 
@@ -60,36 +69,48 @@ To get a Let’s Encrypt certificate, you’ll need an ACME client software, and
 
 ```
 
-5. **Validate domain**
-
-   Please use this command:
-
-   ```bash
-       sudo certbot certonly
-       --authenticator dns-godaddy
-       --dns-godaddy-credentials <path_to_credentials.ini>
-       --dns-godaddy-propagation-seconds 90
-       --keep-until-expiring --non-interactive --expand
-       --server https://acme-v02.api.letsencrypt.org/directory
-       -d 'example.com'
-       -d '*.example.com' # remove if you don't need validate wildcard domain
-   ```
-    When the progress was finished, your certificates would be stored at **/etc/letsencrypt/live/example.com**
-
-6. **Renew**
-
-- Test automatic renewal:
-
-```bash
+1. **Validate domain**
+    
+    Use this command to validate:
+    
+    ```
+    sudo certbot certonly \\
+    --authenticator dns-godaddy \\
+    --dns-godaddy-credentials <path_to_credentials.ini> \\
+    --dns-godaddy-propagation-seconds 90 \\
+    --keep-until-expiring --non-interactive --expand \\
+    --server <https://acme-v02.api.letsencrypt.org/directory> \\
+    -d 'example.com' \\
+    -d '*.example.com' # remove if you don't need to validate wildcard domains
+    
+    ```
+    
+    After the progress is finished, your certificates will be stored at **/etc/letsencrypt/live/example.com**.
+    
+2. **Renew**
+    - Test automatic renewal:
+    
+    ```
     sudo certbot renew --dry-run
-```
-
-- Renew:
-
-```bash
+    
+    ```
+    
+    - Renew:
+    
+    ```
     sudo certbot renew
-```
+    
+    ```
+    
+    ![Renew certificate](blog/Untitled%203.png)
+    
 
-## Conclusion
+## Last but not least
 
-Here are all steps to set up Wildcard SSL for Godaddy domain with Let's Encrypt. I hope this article helpful for you.
+Remember to restart your application/load balancer to reload the certificate file.
+
+## **Conclusion**
+
+These are all the steps to set up Wildcard SSL for GoDaddy domains with Let’s Encrypt. I hope this article is helpful for you.
+
+**If you have any questions, feel free to ask in the comments below!**
