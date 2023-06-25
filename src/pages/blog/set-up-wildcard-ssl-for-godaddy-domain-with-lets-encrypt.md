@@ -6,6 +6,15 @@ heroImage: "/blog/certbot.png"
 pubDate: "Dec 22 2022"
 ---
 
+## Summarize
+1. Update DNS settings with two type A records pointing to the server's IP address.
+2. Install Certbot by following instructions on their website.
+3. Install Certbot GoDaddy DNS from https://github.com/miigotu/certbot-dns-godaddy.
+4. Create GoDaddy Credentials with a configuration file from your [developer.godaddy.com](http://developer.godaddy.com/) account.
+5. Validate the domain using sudo certbot certonly command.
+6. Renew the certificate with sudo certbot renew command.
+7. **Restart your application/load balancer to reload the certificate file.**
+
 Let’s Encrypt is a free, automated, and open certificate authority brought to you by the nonprofit Internet Security Research Group (ISRG). That's why I use this Certificate Authority for my website and other wildcard domains (*.knyl.me).
 
 To get a Let’s Encrypt certificate, you’ll need an ACME client software, and most people use **[Certbot](https://certbot.eff.org/)**.
@@ -69,7 +78,7 @@ To get a Let’s Encrypt certificate, you’ll need an ACME client software, and
 
 ```
 
-1. **Validate domain**
+5. **Validate domain**
     
     Use this command to validate:
     
@@ -87,7 +96,7 @@ To get a Let’s Encrypt certificate, you’ll need an ACME client software, and
     
     After the progress is finished, your certificates will be stored at **/etc/letsencrypt/live/example.com**.
     
-2. **Renew**
+6. **Renew**
     - Test automatic renewal:
     
     ```
