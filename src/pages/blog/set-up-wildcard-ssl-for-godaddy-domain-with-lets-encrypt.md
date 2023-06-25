@@ -26,7 +26,7 @@ To get a Let’s Encrypt certificate, you’ll need an ACME client software, and
     
     ```
     
-    ![DNS Settings](/blog/Untitled.png)
+    ![DNS Settings](/blog/install-timescaledb-on-an-existing-postgresql-container/Untitled.png)
     
     The second record is used for wildcard domains. If you only want to get a certificate for your original domain, add two type A records: **`@`** and **`www`**.
     
@@ -53,11 +53,11 @@ To get a Let’s Encrypt certificate, you’ll need an ACME client software, and
     
     - Go to API keys, create a key:
     
-    ![GoDaddy API Key](/blog/Untitled%201.png)
+    ![GoDaddy API Key](/blog/install-timescaledb-on-an-existing-postgresql-container/Untitled%201.png)
     
     - Save the key and secret to your backup notes.
     
-    ![GoDaddy API Key](/blog/Untitled%202.png)
+    ![GoDaddy API Key](/blog/install-timescaledb-on-an-existing-postgresql-container/Untitled%202.png)
     
     - Create a credential file on your server using the key and secret above:
 
@@ -102,7 +102,7 @@ To get a Let’s Encrypt certificate, you’ll need an ACME client software, and
     
     ```
     
-    ![Renew certificate](/blog/Untitled%203.png)
+    ![Renew certificate](/blog/install-timescaledb-on-an-existing-postgresql-container/Untitled%203.png)
     
 
 ## Last but not least
