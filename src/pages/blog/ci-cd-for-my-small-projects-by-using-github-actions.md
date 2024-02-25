@@ -47,14 +47,19 @@ jobs:
 This action builds and pushes a Docker image to DockerHub whenever changes are pushed to the main branch. However, it includes a TODO for SSHing to a server and reloading Docker Compose.
 
 ```yaml
-name: Docker Image CI
+name: Deploy Static Site
 
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
     - name: Login to DockerHub
@@ -62,14 +67,22 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Build and push Docker
+    - name: Build and push Docker Static Site
       uses: docker/build-push-action@v4.0.0
       with:
-       file: ./Dockerfile
+       file: ./Dockerfile.static-site 
        tags: |
-            <docker registry>:<tag>
+            dotknyl/gateway-static-site:prod
        push: ${{ github.ref == 'refs/heads/main' }}
-		# TODO: SSH to server and reload docker-compose
+    - name: Connect to VPS via SSH and restart Docker Compose
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        script: |
+          cd /root
+          docker compose up -d
 ```
 
 ### Now it's easier.
