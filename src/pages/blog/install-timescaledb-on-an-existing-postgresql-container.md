@@ -1,10 +1,28 @@
----
+*---
 layout: "../../layouts/PostLayout.astro"
 title: "Install TimescaleDB on an existing PostgreSQL container"
 description: "I researched TimescaleDB, a powerful database for time-series data. While installing it on an existing container, I encountered a challenge. After experimenting with different methods and configurations, I successfully installed TimescaleDB."
 heroImage: "/blog/install-timescaledb-on-an-existing-postgresql-container/Untitled%203.png"
 pubDate: "Mar 21 2023"
 ---
+## Table of Contents
+- [Introducing](#introducing)
+- [Installation](#installation)
+  - [Install missing packages for docker container](#install-missing-packages-for-docker-container)
+  - [Install TimescaleDB](#install-timescaledb)
+    - [Add the TimescaleDB third party repository](#add-the-timescaledb-third-party-repository)
+    - [Install Timescale GPG key](#install-timescale-gpg-key)
+    - [Update your local repository list and install TimescaleDB](#update-your-local-repository-list-and-install-timescaledb)
+  - [Update config settings for TimescaleDB](#update-config-settings-for-timescaledb)
+  - [Restart your Docker container to load TimescaleDB](#restart-your-docker-container-to-load-timescaledb)
+  - [Add TimescaleDB extension](#add-timescaledb-extension)
+    - [Log in to psql again](#log-in-to-psql-again)
+    - [Create a new database or switch to an existing one](#create-a-new-database-or-switch-to-an-existing-one)
+    - [Create the TimescaleDB extension](#create-the-timescaledb-extension)
+    - [Check that the TimescaleDB extension is installed](#check-that-the-timescaledb-extension-is-installed)
+- [Summary](#summary)
+
+
 ## Introducing
 
 I have been conducting extensive research on TimescaleDB, a powerful relational database that is designed to handle time-series data. As part of my research, I recently encountered a challenge when trying to install TimescaleDB on an existing container. Despite initially struggling, I spent a considerable amount of time experimenting with different installation methods and configurations, and ultimately, I was able to successfully install TimescaleDB on my container.
@@ -97,7 +115,7 @@ CREATE EXTENSION IF NOT EXISTS timescaledb;
 
 - Here are our results:
 
-![Untitled](/blog/install-timescaledb-on-an-existing-postgresql-container/Untitled%203.png)
+![Untitled](/blog/install-timescaledb-on-an-existing-postgresql-container/Untitled%203.*png*)
 
 - Check that the TimescaleDB extension is installed by using the `\dx` command at the `psql`
  prompt:
