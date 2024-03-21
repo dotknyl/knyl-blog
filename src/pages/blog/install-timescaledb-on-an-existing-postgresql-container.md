@@ -1,4 +1,4 @@
-*---
+---
 layout: "../../layouts/PostLayout.astro"
 title: "Install TimescaleDB on an existing PostgreSQL container"
 description: "I researched TimescaleDB, a powerful database for time-series data. While installing it on an existing container, I encountered a challenge. After experimenting with different methods and configurations, I successfully installed TimescaleDB."
