@@ -4,6 +4,7 @@ dist/
 # dependencies
 node_modules/
 
+.vs/
 # logs
 npm-debug.log*
 yarn-debug.log*
