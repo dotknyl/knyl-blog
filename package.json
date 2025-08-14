@@ -15,9 +15,13 @@
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^1.0.1",
     "astro": "^1.2.3",
-    "daisyui": "^2.27.0"
+    "daisyui": "^2.27.0",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.7"
+    "@tailwindcss/typography": "^0.5.7",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
   }
 }
