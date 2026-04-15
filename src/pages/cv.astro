@@ -3,73 +3,74 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 
 let arr = [
-{
-  title: `Senior Web Engineer at Avaso Software Solutions / CNXION`,
-  subtitle: `From April 2024, Remote`,
-  desc: `
-- Full-stack development across backend and frontend for Avaso Bolt / CNXION platforms. <span class="italic font-medium">[.NET, ASP.NET Core, Angular, PostgreSQL, MongoDB]</span><br>
-- Designed and implemented features for the Avaso Bolt no-code platform, including report templates and tenant/module schema-related improvements.<br>
-- Contributed to customs and trade solutions, including Customs Order flows, Customs Declarations, CBAM, and EUDR-related features.<br>
-- Worked closely with customers and leadership to design practical solutions for CBAM XML reporting and the EUDR portal system.<br>
-- Improved and upgraded the system through frontend upgrades, performance optimizations, and reliability improvements across APIs, email handling, and platform workflows.
+  {
+    title: `Senior Web Engineer at Avaso Software Solutions / CNXION`,
+    subtitle: `From April 2024, Remote`,
+    desc: `
+- Full-stack development for Avaso Bolt / CNXION platforms across backend and frontend. <span class="italic font-medium">[.NET, ASP.NET Core, Angular, PostgreSQL, MongoDB]</span><br>
+- Designed and implemented features for the Avaso Bolt no-code platform, including reporting and tenant/module structure improvements.<br>
+- Contributed to customs and trade workflows, including Customs Orders, Declarations, CBAM, and EUDR solutions.<br>
+- Worked with customers and product leadership to design practical solutions such as CBAM XML reporting and the EUDR portal.<br>
+- Improved platform maintainability through system upgrades, performance optimizations, and reliability enhancements.
   `,
-},
+  },
   {
     title: `Senior Web Engineer at NAPA Global`,
-    subtitle: `From Sep 2023 to 2024 March at Da Nang, Vietnam`,
+    subtitle: `From Sep 2023 to Mar 2024 at Da Nang, Vietnam`,
     desc: `
-- Work with Integrated warehouse systems [.NET Core, Batch script]
-- Work along with the project manager to develop Agile development (manage git branches, reviewing code process, and come up with ideas).    
+- Worked on integrated warehouse systems. <span class="italic font-medium">[.NET Core, Batch Script]</span><br>
+- Collaborated with the project manager on Agile delivery, git branch management, code reviews, and solution design.
   `,
   },
   {
     title: `Senior Web Engineer at ERM System INC`,
     subtitle: `From Nov 2020 to Aug 2023 at Ho Chi Minh City, Vietnam`,
     desc: `
-- Have experience with multi-tenant systems and clean architecture. <span class="italic font-medium">[.NET Core, Angular, Clean Architecture]</span><br>
-- Develop and implement a microservices system. <span class="italic font-medium">[Docker, Kubernetes, HELM]</span><br>
-- Designed a reverse proxy to effectively manage our system services. This includes dynamic routing and simplified management of SSL certificates using Azure Key Vault. <span class="italic font-medium">[YARP, gRPC]</span> <br>
-- Created the dynamic form with a customizable design that is easily managed from the backend. This form can be displayed on public websites and can collect submissions. The submission data is automatically sent to the owner. <span class="italic font-medium">[PostgreSQL, Redis Stream]</span><br>
-- Implemented workflow: Handling system events. <span class="italic">[Redis Stream, Message Broker]</span><br>
-- Migrated and implemented features, such as lead and property management, as well as property map searching. <span class="italic font-medium">[PostgreSQL, Angular, Ngrx Store]</span><br>
-- Have experience with Azure Cloud services: AKS, Blob Storages, Key Vault, ...<br>
-- Have experience in setting up servers, including databases and VPNs.<br>
-- Have experience with: <span class="italic font-medium">Azure Portal, Azure DevOps, Git...</span><br>
+- Built multi-tenant systems following clean architecture principles. <span class="italic font-medium">[.NET Core, Angular, Clean Architecture]</span><br>
+- Developed microservices-based solutions. <span class="italic font-medium">[Docker, Kubernetes, Helm]</span><br>
+- Designed a reverse proxy for dynamic routing and SSL certificate management using Azure Key Vault. <span class="italic font-medium">[YARP, gRPC]</span><br>
+- Built a dynamic form platform managed from the backend and integrated with automated submission handling. <span class="italic font-medium">[PostgreSQL, Redis Stream]</span><br>
+- Implemented event-driven workflows and backend processing. <span class="italic font-medium">[Redis Stream, Message Broker]</span><br>
+- Delivered features for lead management, property management, and property map search. <span class="italic font-medium">[PostgreSQL, Angular, NgRx]</span><br>
+- Worked with Azure services including AKS, Blob Storage, Key Vault, Azure DevOps, and Git.
   `,
   },
   {
     title: `Freelance Developer`,
     subtitle: `From Mar 2018 to Dec 2021`,
     desc: `
-    I have created software for small businesses that manages tracking, crawling, and importing of products.<br>
-  <span class='text-gray-600 font-medium'>Skills: Selenium · .NET Framework</span>
+- Built software for small businesses to support tracking, crawling, and product import workflows.<br>
+<span class='text-gray-600 font-medium'>Skills: Selenium · .NET Framework</span>
   `,
   },
   {
     title: `Information Technology Help Desk at The People's Court of Quang Tri`,
     subtitle: `From Mar 2020 to Sep 2020 at Quang Tri, Vietnam`,
-    desc: `I worked here to be close to my mother, whom I am taking care of, but had to stop. My goal is to enhance my programming skills and explore new technologies. While here, I maintained mechanical systems (computers, printers, and photocopy machines) and software (streaming systems). Although this work did not directly contribute to my programming skills, it provided valuable experiences related to life, people, and family.<br>`,
+    desc: `
+- Provided IT support for computers, printers, photocopy machines, and streaming systems.<br>
+- Strengthened troubleshooting, operational support, and end-user assistance skills.
+  `,
   },
   {
-    title: `Junior Developer at Incredium `,
+    title: `Junior Developer at Incredium`,
     subtitle: `From Dec 2018 to Mar 2020 at Hue, Vietnam`,
-    desc: `I created Fire Click - User Behavior Analytics, which tracks website user behavior and identifies their interests through tables, graphs, charts, heatmaps, and a simple video player.<br>
-<span class='text-gray-600 font-medium'>Skills: .NET MVC, Javascript, VueJs, Algorithm and Data Structures</span>`,
+    desc: `
+- Built Fire Click, a user behavior analytics product that tracks website activity and presents insights through tables, charts, heatmaps, and playback tools.<br>
+<span class='text-gray-600 font-medium'>Skills: .NET MVC · JavaScript · Vue.js · Algorithms · Data Structures</span>
+  `,
   },
   {
     title: `Intern Developer at HoaTamUs`,
     subtitle: `From Sep 2018 to Nov 2018 at Hue, Vietnam`,
-    desc: `Implemented a self-drawing real estate map. The map is created from data, such as polygons and points, and includes functions to control zoom, scrolling, and display of land information.<br>
-    <span class='text-gray-600 font-medium'>Skills: Algorithms · JavaScript · Data Structures</span>`,
+    desc: `
+- Implemented a self-drawing real estate map from polygon and point data, with zoom, scroll, and land information display features.<br>
+<span class='text-gray-600 font-medium'>Skills: Algorithms · JavaScript · Data Structures</span>
+  `,
   },
 ];
 ---
 
 <BaseLayout title="CV">
-  <!-- <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
-  </div> -->
-
   <div class="w-fit">
     <div
       class="w-1/3 sm:w-1/5 avatar transition ease-in-out w-1/2 hover:scale-[102%] block m-auto mt-3 mb-6"
@@ -84,23 +85,12 @@ let arr = [
     </div>
   </div>
 
-<ul class="list-disc md:columns-4 columns-2 mx-6">
-  <li>.NET / ASP.NET Core</li>
-  <li>Angular</li>
-  <li>TypeScript</li>
-  <li>MS SQL</li>
-  <li>PostgreSQL</li>
-  <li>Distributed Systems</li>
-  <li>Microservices</li>
-  <li>Event-Driven Systems</li>
-  <li>Docker</li>
-  <li>Kubernetes</li>
-  <li>Azure</li>
-  <li>Git</li>
-  <li>Azure DevOps</li>
-  <li>GitHub Packages</li>
-  <li>System Design</li>
-</ul>
+  <div class="my-5">
+    Senior Web Engineer with 5+ years of experience across backend, frontend,
+    and platform engineering. Strong in .NET, Angular, distributed systems,
+    and building domain-heavy business platforms.
+  </div>
+
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Experience</div>
   </div>
@@ -116,56 +106,39 @@ let arr = [
       ))
     }
   </div>
+
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Education</div>
   </div>
+
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
       title="Bachelor's degree, Information Technology"
-      subtitle="2015 to 2019 at Hue University Of Science, Hue, Vietnam"
+      subtitle="2015 to 2019 at Hue University of Science, Hue, Vietnam"
       desc="Third Prize - The 2016 ACM ICPC Vietnam Central Provincial Contest."
     />
-    <!-- <TimeLineElement
-      title="Informatics Science Engineer"
-      subtitle="2010 to 2015 at University of Informatics Science (UCI), Habana, Cuba"
-    /> -->
   </div>
-  <!-- <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
-  </div>
-
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a href="https://www.efset.org/cert/DxtNKG" target="_blank">
-        EF SET English Certificate 74/100 (C2 Proficient)</a
-      >
-    </li>
-    <li>
-      <a
-        href="https://certiprof.com/pages/scrum-foundation-professional-certificate-sfpc-en-sp"
-        target="_blank"
-      >
-        Scrum Foundation Professional Certificate (SFPC)</a
-      >
-    </li>
-  </ul> -->
 
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Skills</div>
   </div>
 
   <ul class="list-disc md:columns-4 columns-2 mx-6">
+    <li>.NET / ASP.NET Core</li>
+    <li>Angular</li>
+    <li>TypeScript</li>
+    <li>JavaScript</li>
+    <li>PostgreSQL</li>
+    <li>MongoDB</li>
     <li>Distributed Systems</li>
     <li>Microservices</li>
-    <li>Streaming Events</li>
+    <li>Event-Driven Systems</li>
     <li>Docker</li>
     <li>Kubernetes</li>
-    <li>.NET Core</li>
-    <li>MS SQL</li>
-    <li>Postgres SQL</li>
-    <li>Angular</li>
+    <li>Azure</li>
     <li>Git</li>
     <li>Azure DevOps</li>
-    <li>Azure Portal</li>
+    <li>GitHub Packages</li>
+    <li>System Design</li>
   </ul>
 </BaseLayout>
